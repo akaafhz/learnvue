@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+:root {
+  --brand-sky: 207 100% 88%;
+  --brand-blue-300: 215 42% 64%;
+  --brand-blue-500: 211 38% 51%;
+  --brand-blue-900: 219 87% 18%;
+  --brand-ink: 219 84% 7%;
+
+  --gradient-bg: linear-gradient(
+    to bottom,
+    hsl(var(--brand-sky)) 3%,
+    hsl(var(--brand-blue-300)) 16%,
+    hsl(var(--brand-blue-500)) 33%,
+    hsl(var(--brand-blue-500)) 57%,
+    hsl(var(--brand-blue-900)) 79%,
+    hsl(var(--brand-ink)) 97%
+  );
+
+  font-family: "Inter", system-ui, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color: var(--color-text);
+  background-color: var(--color-bg);
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.hero-bg {
+    background: linear-gradient(
+    to bottom,
+    #C1E8FF 3%,
+    #7DA0CA 16%,
+    #5483B3 33%,
+    #5483B3 57%,
+    #052659 79%,
+    #021024 97%
+  );
+}
