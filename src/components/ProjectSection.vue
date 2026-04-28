@@ -14,7 +14,7 @@ const items = [
   },
   {
     image: 'https://i.pravatar.cc/300?img=2',
-    title: 'Portfolio Website',
+    title: 'Web sekolah SMPN 1 Sanden',
     subtitle: 'lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     handle: 'View Project',
     borderColor: '#10B981',
