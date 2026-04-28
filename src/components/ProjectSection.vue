@@ -1,5 +1,5 @@
 <script setup>
-import ChromaGrid from './ChromaGrid/Chromagrid.vue';
+import ChromaGrid from './ChromaGrid/ChromaGrid.vue';
 import heroImage from '../assets/hero.png';
 
 const items = [
