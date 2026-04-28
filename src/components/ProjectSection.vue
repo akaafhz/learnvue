@@ -32,7 +32,7 @@ const items = [
   },
   {
     image: 'https://i.pravatar.cc/300?img=4',
-    title: 'Dashboard Admin',
+    title: 'Buat VPS dengan STB Emdebian',
     subtitle: 'lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     handle: 'View Project',
     borderColor: '#8B5CF6',
