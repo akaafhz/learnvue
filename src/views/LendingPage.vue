@@ -4,6 +4,7 @@ import HeroSection from '../components/HeroSection.vue';
 import ScrollVelocity from '../components/ScrollVelocity/ScrollVelocity.vue';
 import AboutSection from '../components/AboutSection.vue';
 import ProjectSection from '../components/ProjectSection.vue';
+import ContactSection from '../components/ContactSection.vue';
 </script>
 
 <template>
@@ -18,5 +19,6 @@ import ProjectSection from '../components/ProjectSection.vue';
 
     <AboutSection />
     <ProjectSection />
+    <ContactSection />
   </div>
 </template>
