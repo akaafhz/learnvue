@@ -159,13 +159,16 @@ const spotlightStyle = {
   backdropFilter: 'grayscale(1) brightness(0.78)',
   WebkitBackdropFilter: 'grayscale(1) brightness(0.78)',
   background: 'rgba(0,0,0,0.001)',
-  maskImage: 'radial-gradient(circle var(--r) at var(--x) var(--y),transparent 0%,transparent 15%,rgba(0,0,0,0.10) 30%,rgba(0,0,0,0.22)45%,rgba(0,0,0,0.35)60%,rgba(0,0,0,0.50)75%,rgba(0,0,0,0.68)88%,white 100%)',
-  WebkitMaskImage: 'radial-gradient(circle var(--r) at var(--x) var(--y),transparent 0%,transparent 15%,rgba(0,0,0,0.10) 30%,rgba(0,0,0,0.22)45%,rgba(0,0,0,0.35)60%,rgba(0,0,0,0.50)75%,rgba(0,0,0,0.68)88%,white 100%)',
+  maskImage:
+    'radial-gradient(circle var(--r) at var(--x) var(--y),transparent 0%,transparent 15%,rgba(0,0,0,0.10) 30%,rgba(0,0,0,0.22)45%,rgba(0,0,0,0.35)60%,rgba(0,0,0,0.50)75%,rgba(0,0,0,0.68)88%,white 100%)',
+  WebkitMaskImage:
+    'radial-gradient(circle var(--r) at var(--x) var(--y),transparent 0%,transparent 15%,rgba(0,0,0,0.10) 30%,rgba(0,0,0,0.22)45%,rgba(0,0,0,0.35)60%,rgba(0,0,0,0.50)75%,rgba(0,0,0,0.68)88%,white 100%)',
 };
 
 const fadeStyle = {
   ...spotlightStyle,
-  maskImage: 'radial-gradient(circle var(--r) at var(--x) var(--y),white 0%,white 15%,rgba(255,255,255,0.90)30%,rgba(255,255,255,0.78)45%,rgba(255,255,255,0.65)60%,rgba(255,255,255,0.50)75%,rgba(255,255,255,0.32)88%,transparent 100%)',
+  maskImage:
+    'radial-gradient(circle var(--r) at var(--x) var(--y),white 0%,white 15%,rgba(255,255,255,0.90)30%,rgba(255,255,255,0.78)45%,rgba(255,255,255,0.65)60%,rgba(255,255,255,0.50)75%,rgba(255,255,255,0.32)88%,transparent 100%)',
   WebkitMaskImage:
     'radial-gradient(circle var(--r) at var(--x) var(--y),white 0%,white 15%,rgba(255,255,255,0.90)30%,rgba(255,255,255,0.78)45%,rgba(255,255,255,0.65)60%,rgba(255,255,255,0.50)75%,rgba(255,255,255,0.32)88%,transparent 100%)',
   opacity: 1,
@@ -175,7 +178,7 @@ const fadeStyle = {
 <template>
   <div
     ref="rootRef"
-    class="relative w-full h-full flex flex-wrap justify-center items-start gap-6"
+    class="relative w-full h-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-6"
     :style="{
       '--r': `${props.radius}px`,
       '--x': '50%',
@@ -187,7 +190,7 @@ const fadeStyle = {
     <article
       v-for="(c, i) in data"
       :key="i"
-      class="group relative flex flex-col w-full sm:w-[340px] lg:w-[360px] h-[380px] rounded-[24px] overflow-hidden border border-white/5 hover:border-[var(--card-border)] bg-[#111] transition-all duration-300"
+      class="chroma-article group relative flex flex-col w-full h-[260px] rounded-[20px] overflow-hidden border border-white/5 hover:border-[var(--card-border)] bg-gradient-to-b from-[#0b0b0b] via-[#0e0e12] to-[#080808] transition-all duration-300 cursor-pointer"
       :style="{
         '--mouse-x': '50%',
         '--mouse-y': '50%',
@@ -206,14 +209,14 @@ const fadeStyle = {
         }"
       />
 
-      <div class="relative z-10 w-full h-[230px] p-4 box-border">
-        <div class="w-full h-full rounded-[16px] overflow-hidden bg-black/40 border border-white/5 relative">
+      <div class="relative z-10 w-full h-[140px] p-6 box-border">
+        <div class="w-full h-full rounded-t-[16px] overflow-hidden bg-gradient-to-b from-[#0b0b0b] via-[#0e0e12] to-transparent border-b border-white/5 relative">
           <img :src="c.image" :alt="c.title" loading="lazy" class="w-full h-full object-cover block" />
         </div>
       </div>
 
-      <footer class="relative z-10 px-5 pb-6 pt-2 text-white font-sans flex flex-col text-left">
-        <h3 class="m-0 text-[1.1rem] font-bold tracking-wide">{{ c.title }}</h3>
+      <footer class="relative z-10 px-6 pb-6 pt-4 text-white font-sans flex flex-col text-left bg-gradient-to-t from-black/60 to-transparent">
+        <h3 class="m-0 text-[1.05rem] font-bold tracking-wide">{{ c.title }}</h3>
         <p class="m-0 mt-2 text-[0.9rem] text-gray-400 font-light leading-relaxed line-clamp-2">{{ c.subtitle }}</p>
       </footer>
     </article>
@@ -222,3 +225,29 @@ const fadeStyle = {
     <div ref="fadeRef" class="absolute inset-0 pointer-events-none transition-opacity duration-[250ms] z-40" :style="fadeStyle" />
   </div>
 </template>
+
+<style scoped>
+@media (min-width: 1024px) {
+  .chroma-article {
+    transform: translateY(0);
+    transition:
+      transform 0.35s ease,
+      box-shadow 0.25s ease;
+  }
+}
+
+@media (max-width: 1023px) {
+  .chroma-article {
+    transform: translateY(0) !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .chroma-article {
+    margin-bottom: 6px;
+  }
+  .chroma-article {
+  height: 260px;
+}
+}
+</style>

@@ -1,6 +1,7 @@
 <script setup>
 import ProfileCard from './ProfileCard/ProfileCard.vue';
 import Mee from '../assets/mee.png';
+import Grain from '../assets/grain.png';
 </script>
 
 <template>
@@ -24,25 +25,26 @@ import Mee from '../assets/mee.png';
         </div>
 
         <!-- FOTO -->
-        <div class="flex justify-center md:justify-end">
-          <div class="relative">
-              <ProfileCard
-                name="Hafiz Arintaka"
-                title="Frontend Developer"
-                handle="_akaafhz"
-                status="Online"
-                contact-text="Contact Me"
-                avatar-url="../assets/mee.png"
-                icon-url="/assets/iconpattern.png"
-                grain-url="/assets/grain.webp"
-                :show-user-info="true"
-                :show-behind-gradient="true"
-                :enable-tilt="true"
-                @contact-click="handleContactClick"
-              />
-            <div class="absolute -inset-2 bg-white/10 blur-xl rounded-2xl"></div>
-          </div>
-        </div>
+<div class="flex justify-center md:justify-end">
+  <div class="relative">
+    <ProfileCard
+      name="Hafiz Arintaka"
+      title="Frontend Developer"
+      handle="_akaafhz"
+      status="Online"
+      contact-text="Contact Me"
+      :avatar-url="Mee"
+      :icon-url="ViteIcon"
+      :grain-url="Grain"
+      :show-user-info="true"
+      :show-behind-gradient="true"
+      :enable-tilt="true"
+      @contact-click="handleContactClick"
+    />
+    <!-- kalau mau efek blur di belakang -->
+    <div class="absolute -inset-2 bg-white/10 blur-xl rounded-2xl pointer-events-none"></div>
+  </div>
+</div>
       </div>
     </div>
   </section>
