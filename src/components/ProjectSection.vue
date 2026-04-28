@@ -5,7 +5,7 @@ import heroImage from '../assets/hero.png';
 const items = [
   {
     image: 'https://i.pravatar.cc/300?img=1',
-    title: 'E-Commerce App',
+    title: 'ADN TRansportation',
     subtitle: 'lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     handle: 'View Project',
     borderColor: '#3B82F6',
