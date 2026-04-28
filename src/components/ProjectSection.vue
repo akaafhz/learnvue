@@ -23,7 +23,7 @@ const items = [
   },
   {
     image: 'https://i.pravatar.cc/300?img=3',
-    title: 'Dashboard Admin',
+    title: 'Dasboard CMS backend',
     subtitle: 'lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     handle: 'View Project',
     borderColor: '#8B5CF6',
