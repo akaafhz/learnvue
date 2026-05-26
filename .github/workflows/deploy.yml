@@ -1,4 +1,4 @@
-name: Auto Deploy to VPS
+name: Deploy Grey LearnVue
 
 on:
   push:
@@ -7,25 +7,26 @@ on:
 
 jobs:
   deploy:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
+
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+      - name: Pull latest code
+        run: |
+          cd /var/www/app/learnvue
+          git fetch origin main
+          git reset --hard origin/main
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '18'
+      - name: Install dependencies
+        run: |
+          cd /var/www/app/learnvue
+          pnpm install
 
-      - name: Deploy ke VPS via SSH
-        uses: appleboy/ssh-action@v1.0.3
-        with:
-          host: ${{ secrets.VPS_HOST }}
-          username: ${{ secrets.VPS_USER }}
-          key: ${{ secrets.VPS_SSH_KEY }}
-          script: |
-            cd /var/www/app/learnvue
-            git pull origin main
-            npm ci --silent
-            npm run build
-            pm2 restart all
+      - name: Build frontend
+        run: |
+          cd /var/www/app/learnvue
+          pnpm run build
+
+      - name: Reload nginx
+        run: |
+          nginx -t
+          systemctl reload nginx
