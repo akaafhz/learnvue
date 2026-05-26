@@ -12,15 +12,15 @@ const menus = [
 </script>
 
 <template>
-  <nav class="fixed top-4 left-1/2 -translate-x-1/2 w-[90%] max-w-4xl z-50">
+  <nav class="fixed top-3 md:top-4 left-1/2 -translate-x-1/2 w-[92%] md:w-[90%] max-w-4xl z-50 px-2">
     <!-- NAVBAR -->
-    <div class="bg-black/70 backdrop-blur-lg rounded-full px-6 py-4 flex justify-between items-center shadow-lg">
+    <div class="bg-black/70 backdrop-blur-lg rounded-full px-4 md:px-6 py-3 md:py-4 flex justify-between items-center shadow-lg">
       <!-- Logo -->
-      <h1 class="text-white font-bold">Achorge</h1>
+      <h1 class="text-white font-bold text-sm md:text-base">Achorge</h1>
 
       <!-- Desktop Menu -->
       <div class="hidden md:flex gap-6">
-        <router-link v-for="menu in menus" :key="menu.path" :to="menu.path" class="text-gray-300 hover:text-white transition" active-class="text-white font-bold underline underline-offset-4">
+        <router-link v-for="menu in menus" :key="menu.path" :to="menu.path" class="text-gray-300 hover:text-white transition text-sm md:text-base" active-class="text-white font-bold underline underline-offset-4">
           {{ menu.name }}
         </router-link>
       </div>
@@ -36,9 +36,9 @@ const menus = [
     </div>
 
     <!-- Mobile Menu -->
-    <div v-show="isOpen" class="md:hidden mt-3 bg-black/70 backdrop-blur-lg rounded-2xl p-4 shadow-xl transition-all duration-300">
+    <div v-show="isOpen" class="md:hidden mt-2 md:mt-3 bg-black/70 backdrop-blur-lg rounded-2xl p-4 shadow-xl transition-all duration-300">
       <div class="flex flex-col gap-4 text-center">
-        <router-link v-for="menu in menus" :key="menu.path" :to="menu.path" @click="isOpen = false" class="text-gray-300 hover:text-white transition" active-class="text-white font-bold underline underline-offset-4">
+        <router-link v-for="menu in menus" :key="menu.path" :to="menu.path" @click="isOpen = false" class="text-gray-300 hover:text-white transition text-sm md:text-base" active-class="text-white font-bold underline underline-offset-4">
           {{ menu.name }}
         </router-link>
       </div>

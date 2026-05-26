@@ -38,18 +38,18 @@ const items = [
     borderColor: '#8B5CF6',
     gradient: 'linear-gradient(120deg, rgba(139,92,246,0.15) 0%, rgba(10,10,10,1) 50%)',
     url: '#',
-  }
+  },
 ];
 </script>
 
 <template>
-  <section class="relative py-24 bg-[#0a0a0a] flex flex-col items-center overflow-hidden">
-    <div class="container mx-auto px-6 max-w-6xl text-center">
-      <h2 class="text-4xl md:text-5xl font-bold text-center text-white mb-8">My Projects</h2>
-      <p class="text-gray-400 mb-16 max-w-2xl mx-auto">Here are some of the projects I've worked on. Each project showcases my skills in creating modern, responsive, and user-friendly web applications.</p>
+  <section class="relative py-12 md:py-24 bg-[#0a0a0a] flex flex-col items-center overflow-hidden">
+    <div class="container mx-auto px-4 md:px-6 max-w-6xl text-center w-full">
+      <h2 class="text-3xl md:text-5xl font-bold text-center text-white mb-4 md:mb-8">My Projects</h2>
+      <p class="text-gray-400 mb-8 md:mb-16 max-w-2xl mx-auto text-sm md:text-base px-2">Here are some of the projects I've worked on. Each project showcases my skills in creating modern, responsive, and user-friendly web applications.</p>
 
       <div class="w-full">
-        <div class="bg-[#0b0b0b] rounded-2xl p-8 shadow-inner border border-white/5 overflow-hidden">
+        <div class="bg-[#0b0b0b] rounded-2xl p-4 md:p-8 shadow-inner border border-white/5 overflow-hidden">
           <ChromaGrid :items="items" :radius="300" :damping="0.45" :fadeOut="0.6" ease="power3.out" />
         </div>
       </div>
