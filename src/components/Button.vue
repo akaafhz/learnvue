@@ -22,7 +22,7 @@ const handleClick = () => {
 </script>
 
 <template>
-  <button @click="handleClick" class="bg-[#5483B3] hover:bg-[#7DA0CA] text-text font-bold py-2 px-4 sm:py-3 sm:px-5 rounded-xl cursor-pointer transition-colors duration-400 text-sm sm:text-base">
+  <button @click="handleClick" class="bg-[#5483B3] hover:bg-[#7DA0CA] text-white font-bold py-2 md:py-3 px-4 md:px-5 rounded-xl cursor-pointer transition-colors duration-400 text-xs md:text-sm lg:text-base">
     {{ text }}
   </button>
 </template>
